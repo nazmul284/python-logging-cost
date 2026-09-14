@@ -1,0 +1,78 @@
+{
+  "reps": 5,
+  "n": 200000,
+  "rows": [
+    {
+      "mode": "discarded",
+      "lib": "stdlib",
+      "n": 200000,
+      "min_ms": 31.4,
+      "per_call_us": 0.157,
+      "error": null
+    },
+    {
+      "mode": "discarded",
+      "lib": "structlog",
+      "n": 200000,
+      "min_ms": 43.1,
+      "per_call_us": 0.215,
+      "error": null
+    },
+    {
+      "mode": "discarded",
+      "lib": "loguru",
+      "n": 200000,
+      "min_ms": 39.4,
+      "per_call_us": 0.197,
+      "error": null
+    },
+    {
+      "mode": "plain",
+      "lib": "stdlib",
+      "n": 200000,
+      "min_ms": 1162.8,
+      "per_call_us": 5.814,
+      "error": null
+    },
+    {
+      "mode": "plain",
+      "lib": "structlog",
+      "n": 200000,
+      "min_ms": 1250.7,
+      "per_call_us": 6.253,
+      "error": null
+    },
+    {
+      "mode": "plain",
+      "lib": "loguru",
+      "n": 200000,
+      "min_ms": 1498.3,
+      "per_call_us": 7.492,
+      "error": null
+    },
+    {
+      "mode": "json",
+      "lib": "stdlib",
+      "n": 200000,
+      "min_ms": 1131.2,
+      "per_call_us": 5.656,
+      "error": null
+    },
+    {
+      "mode": "json",
+      "lib": "structlog",
+      "n": 200000,
+      "min_ms": 1025.4,
+      "per_call_us": 5.127,
+      "error": null
+    },
+    {
+      "mode": "json",
+      "lib": "loguru",
+      "n": 200000,
+      "min_ms": 3298.9,
+      "per_call_us": 16.494,
+      "error": null
+    }
+  ]
+}
