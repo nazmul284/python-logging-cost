@@ -1,0 +1,20 @@
+{
+  "n": 200000,
+  "reps": 5,
+  "rows": [
+    {
+      "mode": "default",
+      "min_ms": 3491.6,
+      "per_call_us": 17.458
+    },
+    {
+      "mode": "minimal",
+      "min_ms": 1898.4,
+      "per_call_us": 9.492
+    }
+  ],
+  "payload_bytes": {
+    "loguru_default": 598,
+    "structlog": 100
+  }
+}

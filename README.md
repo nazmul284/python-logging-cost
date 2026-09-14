@@ -22,6 +22,21 @@ exist. And the libraries are within 1.4x of each other everywhere except JSON
 output, where loguru's `serialize=True` is 3.2x slower than structlog's renderer
 and 2.9x slower than a plain stdlib JSON formatter.
 
+## Is loguru's JSON slow, or just verbose?
+
+`serialize=True` emits 13 record fields and about 598 bytes per line. A structlog record
+with four fields is about 100. Reporting "3.2x slower" without that compares two different
+jobs, so loguru was run again through a custom sink emitting the same four fields:
+
+```
+loguru serialize=True   17.46 us/call   13 fields, 598 bytes
+loguru four fields       9.49 us/call    4 fields, 100 bytes
+structlog                5.13 us/call    4 fields, 100 bytes
+```
+
+About half the gap is verbosity. Matched field for field loguru is still 1.85x slower than
+structlog, which is a real difference and a much smaller claim.
+
 ## Method
 
 - Every library writes to an open file descriptor on `/dev/null`, so the disk is
